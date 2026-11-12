@@ -10,7 +10,7 @@
 
 ## 📺 Video de Demostración
 
-> [**Ver demostración en YouTube →**](ENLACE-DE-YOUTUBE-PENDIENTE)
+> [**Ver demostración en YouTube →**](https://youtu.be/Hy2PBKLbw6Y)
 
 ---
 
@@ -45,7 +45,7 @@ Demostrar cómo **reducir la superficie de ataque** de los equipos de una red (r
 | Requisito                                                      | Implementado con                                                                                                  |
 | -------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
 | Repositorio de GitHub con documentación profesional            | Este repositorio                                                                                                  |
-| Video demostrativo al principio del repositorio                | Sección [Video de Demostración](#-video-de-demostración)                                                          |
+| Video demostrativo al principio del repositorio                | Sección [Video de Demostración](https://youtu.be/Hy2PBKLbw6Y)                                                     |
 | Documentación con imágenes y diagramas                         | Carpeta `image/` y diagramas Mermaid en [Documentación de la Red](#-documentación-de-la-red)                      |
 | Propósito del laboratorio                                      | Sección [Propósito del Laboratorio](#-propósito-del-laboratorio)                                                  |
 | Todos los scripts utilizados                                   | Carpeta [`scripts/`](scripts)                                                                                     |
