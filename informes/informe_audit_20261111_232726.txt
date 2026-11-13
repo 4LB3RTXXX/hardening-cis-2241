@@ -1,0 +1,33 @@
+======================================================================
+INFORME DE HARDENING CIS - CISCO IOS
+Fecha y hora: 2026-11-11 23:27:26
+Modo: AUDITORIA (no se aplica ninguna regla)
+======================================================================
+
+Equipo: R1-2241 (10.22.41.1) - tipo: router
+----------------------------------------------------------------------
+RESULTADO DE LA AUDITORIA:
+  [CUMPLE   ] R01 Contrasena enable con hash (enable secret)
+  [CUMPLE   ] R02 Cifrado de contrasenas (service password-encryption)
+  [CUMPLE   ] R03 Solo SSH en lineas vty (transport input ssh)
+  [CUMPLE   ] R04 Exec-timeout de 5 min en consola y vty
+  [CUMPLE   ] R05 Banner de aviso legal
+  [CUMPLE   ] R06 Servidor HTTP/HTTPS deshabilitado
+  [CUMPLE   ] R07 Servicio PAD deshabilitado (no service pad)
+  [CUMPLE   ] R08 Timestamps en logs y debug (datetime msec)
+  [CUMPLE   ] R09 Source routing deshabilitado (no ip source-route)
+  [CUMPLE   ] R10 Proxy ARP deshabilitado en interfaces
+  Cumplimiento: 10/10 (100%)
+
+Equipo: SW1-2241 (10.22.41.2) - tipo: switch
+----------------------------------------------------------------------
+RESULTADO DE LA AUDITORIA:
+  [CUMPLE   ] R01 Contrasena enable con hash (enable secret)
+  [CUMPLE   ] R02 Cifrado de contrasenas (service password-encryption)
+  [CUMPLE   ] R03 Solo SSH en lineas vty (transport input ssh)
+  [CUMPLE   ] R04 Exec-timeout de 5 min en consola y vty
+  [CUMPLE   ] R05 Banner de aviso legal
+  [CUMPLE   ] R06 Servidor HTTP/HTTPS deshabilitado
+  [CUMPLE   ] R07 Servicio PAD deshabilitado (no service pad)
+  [CUMPLE   ] R08 Timestamps en logs y debug (datetime msec)
+  Cumplimiento: 8/8 (100%)

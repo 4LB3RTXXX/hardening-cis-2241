@@ -1,0 +1,103 @@
+======================================================================
+INFORME DE HARDENING CIS - CISCO IOS
+Fecha y hora: 2026-11-11 23:26:19
+Modo: APLICAR REGLAS + INFORME POSTUMO
+======================================================================
+
+Equipo: R1-2241 (10.22.41.1) - tipo: router
+----------------------------------------------------------------------
+ESTADO INICIAL (antes de aplicar):
+  [NO CUMPLE] R01 Contrasena enable con hash (enable secret)
+             pendiente: enable secret
+  [NO CUMPLE] R02 Cifrado de contrasenas (service password-encryption)
+             pendiente: service password-encryption
+  [NO CUMPLE] R03 Solo SSH en lineas vty (transport input ssh)
+             pendiente: line vty 0 4
+  [NO CUMPLE] R04 Exec-timeout de 5 min en consola y vty
+             pendiente: line con 0, line vty 0 4
+  [NO CUMPLE] R05 Banner de aviso legal
+             pendiente: banner login
+  [CUMPLE   ] R06 Servidor HTTP/HTTPS deshabilitado
+  [NO CUMPLE] R07 Servicio PAD deshabilitado (no service pad)
+             pendiente: no service pad
+  [CUMPLE   ] R08 Timestamps en logs y debug (datetime msec)
+  [NO CUMPLE] R09 Source routing deshabilitado (no ip source-route)
+             pendiente: no ip source-route
+  [NO CUMPLE] R10 Proxy ARP deshabilitado en interfaces
+             pendiente: interface FastEthernet0/0
+  Cumplimiento: 2/10 (20%)
+
+COMANDOS APLICADOS:
+    enable secret Enable2241!
+    service password-encryption
+    line vty 0 4
+    transport input ssh
+    line con 0
+    exec-timeout 5 0
+    line vty 0 4
+    exec-timeout 5 0
+    banner login # Acceso autorizado solamente. Toda actividad es monitoreada y registrada. #
+    no service pad
+    no ip source-route
+    interface FastEthernet0/0
+    no ip proxy-arp
+
+ESTADO FINAL (informe postumo):
+  [CUMPLE   ] R01 Contrasena enable con hash (enable secret)
+  [CUMPLE   ] R02 Cifrado de contrasenas (service password-encryption)
+  [CUMPLE   ] R03 Solo SSH en lineas vty (transport input ssh)
+  [CUMPLE   ] R04 Exec-timeout de 5 min en consola y vty
+  [CUMPLE   ] R05 Banner de aviso legal
+  [CUMPLE   ] R06 Servidor HTTP/HTTPS deshabilitado
+  [CUMPLE   ] R07 Servicio PAD deshabilitado (no service pad)
+  [CUMPLE   ] R08 Timestamps en logs y debug (datetime msec)
+  [CUMPLE   ] R09 Source routing deshabilitado (no ip source-route)
+  [CUMPLE   ] R10 Proxy ARP deshabilitado en interfaces
+  Cumplimiento: 10/10 (100%)
+
+Equipo: SW1-2241 (10.22.41.2) - tipo: switch
+----------------------------------------------------------------------
+ESTADO INICIAL (antes de aplicar):
+  [NO CUMPLE] R01 Contrasena enable con hash (enable secret)
+             pendiente: enable secret
+  [NO CUMPLE] R02 Cifrado de contrasenas (service password-encryption)
+             pendiente: service password-encryption
+  [NO CUMPLE] R03 Solo SSH en lineas vty (transport input ssh)
+             pendiente: line vty 0 4, line vty 5 15
+  [NO CUMPLE] R04 Exec-timeout de 5 min en consola y vty
+             pendiente: line con 0, line vty 0 4, line vty 5 15
+  [CUMPLE   ] R05 Banner de aviso legal
+  [NO CUMPLE] R06 Servidor HTTP/HTTPS deshabilitado
+             pendiente: no ip http server, no ip http secure-server
+  [NO CUMPLE] R07 Servicio PAD deshabilitado (no service pad)
+             pendiente: no service pad
+  [CUMPLE   ] R08 Timestamps en logs y debug (datetime msec)
+  Cumplimiento: 2/8 (25%)
+
+COMANDOS APLICADOS:
+    enable secret Enable2241!
+    service password-encryption
+    line vty 0 4
+    transport input ssh
+    line vty 5 15
+    transport input ssh
+    line con 0
+    exec-timeout 5 0
+    line vty 0 4
+    exec-timeout 5 0
+    line vty 5 15
+    exec-timeout 5 0
+    no ip http server
+    no ip http secure-server
+    no service pad
+
+ESTADO FINAL (informe postumo):
+  [CUMPLE   ] R01 Contrasena enable con hash (enable secret)
+  [CUMPLE   ] R02 Cifrado de contrasenas (service password-encryption)
+  [CUMPLE   ] R03 Solo SSH en lineas vty (transport input ssh)
+  [CUMPLE   ] R04 Exec-timeout de 5 min en consola y vty
+  [CUMPLE   ] R05 Banner de aviso legal
+  [CUMPLE   ] R06 Servidor HTTP/HTTPS deshabilitado
+  [CUMPLE   ] R07 Servicio PAD deshabilitado (no service pad)
+  [CUMPLE   ] R08 Timestamps en logs y debug (datetime msec)
+  Cumplimiento: 8/8 (100%)

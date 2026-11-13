@@ -1,0 +1,44 @@
+======================================================================
+INFORME DE HARDENING CIS
+Fecha y hora: 2026-11-13 01:39:11
+Modo: AUDITORIA (no se aplica ninguna regla)
+======================================================================
+
+Equipo: R1-2241 (10.22.41.1) - tipo: router
+----------------------------------------------------------------------
+RESULTADO DE LA AUDITORIA:
+  [CUMPLE   ] R01 Contrasena enable con hash (enable secret)
+  [CUMPLE   ] R02 Cifrado de contrasenas (service password-encryption)
+  [CUMPLE   ] R03 Solo SSH en lineas vty (transport input ssh)
+  [CUMPLE   ] R04 Exec-timeout de 5 min en consola y vty
+  [CUMPLE   ] R05 Banner de aviso legal
+  [CUMPLE   ] R06 Servidor HTTP/HTTPS deshabilitado
+  [CUMPLE   ] R07 Servicio PAD deshabilitado (no service pad)
+  [CUMPLE   ] R08 Timestamps en logs y debug (datetime msec)
+  [CUMPLE   ] R09 Source routing deshabilitado (no ip source-route)
+  [CUMPLE   ] R10 Proxy ARP deshabilitado en interfaces
+  Cumplimiento: 10/10 (100%)
+
+Equipo: SW1-2241 (10.22.41.2) - tipo: switch
+----------------------------------------------------------------------
+RESULTADO DE LA AUDITORIA:
+  [CUMPLE   ] R01 Contrasena enable con hash (enable secret)
+  [CUMPLE   ] R02 Cifrado de contrasenas (service password-encryption)
+  [CUMPLE   ] R03 Solo SSH en lineas vty (transport input ssh)
+  [CUMPLE   ] R04 Exec-timeout de 5 min en consola y vty
+  [CUMPLE   ] R05 Banner de aviso legal
+  [CUMPLE   ] R06 Servidor HTTP/HTTPS deshabilitado
+  [CUMPLE   ] R07 Servicio PAD deshabilitado (no service pad)
+  [CUMPLE   ] R08 Timestamps en logs y debug (datetime msec)
+  Cumplimiento: 8/8 (100%)
+
+Equipo: FGT-CIS-LAB (10.22.41.3) - tipo: firewall
+----------------------------------------------------------------------
+RESULTADO DE LA AUDITORIA:
+  [CUMPLE   ] F01 FortiGate: admintimeout de 5 min o menos
+  [CUMPLE   ] F02 FortiGate: bloqueo tras 3 intentos fallidos (15 min)
+  [CUMPLE   ] F03 FortiGate: banner previo al login activado
+  [CUMPLE   ] F04 FortiGate: politica de contrasenas activa
+  [CUMPLE   ] F05 FortiGate: sin HTTP ni Telnet en administracion
+  [CUMPLE   ] F06 FortiGate: sin TLS 1.0/1.1 en administracion web
+  Cumplimiento: 6/6 (100%)

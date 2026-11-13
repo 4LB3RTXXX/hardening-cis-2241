@@ -1,0 +1,51 @@
+======================================================================
+INFORME DE HARDENING CIS
+Fecha y hora: 2026-11-13 01:35:04
+Modo: APLICAR REGLAS + INFORME POSTUMO
+======================================================================
+
+Equipo: FGT-CIS-LAB (10.22.41.3) - tipo: firewall
+----------------------------------------------------------------------
+ESTADO INICIAL (antes de aplicar):
+  [NO CUMPLE] F01 FortiGate: admintimeout de 5 min o menos
+             pendiente: admintimeout actual: 30
+  [NO CUMPLE] F02 FortiGate: bloqueo tras 3 intentos fallidos (15 min)
+             pendiente: umbral=10, duracion=60
+  [NO CUMPLE] F03 FortiGate: banner previo al login activado
+             pendiente: pre-login-banner desactivado
+  [NO CUMPLE] F04 FortiGate: politica de contrasenas activa
+             pendiente: politica activa=False, largo minimo=None
+  [NO CUMPLE] F05 FortiGate: sin HTTP ni Telnet en administracion
+             pendiente: port1 -> allowaccess ping https ssh
+  [CUMPLE   ] F06 FortiGate: sin TLS 1.0/1.1 en administracion web
+  Cumplimiento: 1/6 (17%)
+
+COMANDOS APLICADOS:
+    config system global
+    set admintimeout 5
+    end
+    config system global
+    set admin-lockout-threshold 3
+    set admin-lockout-duration 900
+    end
+    config system global
+    set pre-login-banner enable
+    end
+    config system password-policy
+    set status enable
+    set minimum-length 12
+    end
+    config system interface
+    edit "port1"
+    set allowaccess ping https ssh
+    next
+    end
+
+ESTADO FINAL (informe postumo):
+  [CUMPLE   ] F01 FortiGate: admintimeout de 5 min o menos
+  [CUMPLE   ] F02 FortiGate: bloqueo tras 3 intentos fallidos (15 min)
+  [CUMPLE   ] F03 FortiGate: banner previo al login activado
+  [CUMPLE   ] F04 FortiGate: politica de contrasenas activa
+  [CUMPLE   ] F05 FortiGate: sin HTTP ni Telnet en administracion
+  [CUMPLE   ] F06 FortiGate: sin TLS 1.0/1.1 en administracion web
+  Cumplimiento: 6/6 (100%)

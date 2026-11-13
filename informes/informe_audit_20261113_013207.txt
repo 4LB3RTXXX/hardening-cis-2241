@@ -1,0 +1,21 @@
+======================================================================
+INFORME DE HARDENING CIS
+Fecha y hora: 2026-11-13 01:32:07
+Modo: AUDITORIA (no se aplica ninguna regla)
+======================================================================
+
+Equipo: FGT-CIS-LAB (10.22.41.3) - tipo: firewall
+----------------------------------------------------------------------
+RESULTADO DE LA AUDITORIA:
+  [NO CUMPLE] F01 FortiGate: admintimeout de 5 min o menos
+             pendiente: admintimeout actual: 30
+  [NO CUMPLE] F02 FortiGate: bloqueo tras 3 intentos fallidos (15 min)
+             pendiente: umbral=10, duracion=60
+  [NO CUMPLE] F03 FortiGate: banner previo al login activado
+             pendiente: pre-login-banner desactivado
+  [NO CUMPLE] F04 FortiGate: politica de contrasenas activa
+             pendiente: politica activa=False, largo minimo=None
+  [NO CUMPLE] F05 FortiGate: sin HTTP ni Telnet en administracion
+             pendiente: port1 -> allowaccess ping https ssh
+  [CUMPLE   ] F06 FortiGate: sin TLS 1.0/1.1 en administracion web
+  Cumplimiento: 1/6 (17%)
