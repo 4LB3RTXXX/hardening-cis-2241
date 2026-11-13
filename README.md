@@ -10,7 +10,7 @@
 
 ## 📺 Video de Demostración
 
-> [**Ver demostración en YouTube →**](ENLACE-DE-YOUTUBE-PENDIENTE)
+> [**Ver demostración en YouTube →**](https://www.youtube.com/watch?v=axXEBrFFhi8)
 
 ---
 
@@ -45,13 +45,13 @@ Demostrar cómo **reducir la superficie de ataque** de los equipos de una red (r
 | Requisito                                                      | Implementado con                                                                                                           |
 | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | Repositorio de GitHub con documentación profesional            | Este repositorio                                                                                                           |
-| Video demostrativo al principio del repositorio                | Sección [Video de Demostración](#-video-de-demostración)                                                                   |
+| Video demostrativo al principio del repositorio                | Sección [Video de Demostración](https://www.youtube.com/watch?v=axXEBrFFhi8)                                               |
 | Documentación con imágenes y diagramas                         | Carpeta `image/` y diagramas Mermaid en [Documentación de la Red](#-documentación-de-la-red)                               |
 | Propósito del laboratorio                                      | Sección [Propósito del Laboratorio](#-propósito-del-laboratorio)                                                           |
 | Todos los scripts utilizados                                   | Carpeta [`scripts/`](scripts)                                                                                              |
-| Running-configs                                                | Carpeta [`running-configs/`](running-configs), con la configuración de antes y después de cada equipo                      |
-| Red con router, switch y firewall                              | `R1-2241` (router Cisco 7200), `SW1-2241` (switch Cisco IOSvL2) y `FGT-CIS-LAB` (firewall FortiGate 7.0.9)                 |
-| Herramienta de análisis basada en el CIS Benchmark             | Script `hardening.py` en modo `--audit`: 10 reglas en el router, 8 en el switch y 6 en el firewall                         |
+| Running-configs                                                | Carpeta [`running-configs/`](running-configs), con la configuración de antes y después de cada equipo                     |
+| Red con router, switch y firewall                              | `R1-2241` (router Cisco 7200), `SW1-2241` (switch Cisco IOSvL2) y `FGT-CIS-LAB` (firewall FortiGate 7.0.9)           |
+| Herramienta de análisis basada en el CIS Benchmark             | Script `hardening.py` en modo `--audit`: 10 reglas en el router, 8 en el switch y 6 en el firewall                   |
 | Aplicar recomendaciones para hacer hardening                   | Script `hardening.py` en modo `--apply`                                                                                    |
 | Documentar las recomendaciones aplicadas y por qué             | Sección [Recomendaciones CIS Aplicadas](#-recomendaciones-cis-aplicadas)                                                   |
 | Probar las recomendaciones aplicadas                           | Sección [Validación de la Implementación](#-validación-de-la-implementación)                                               |
