@@ -1,0 +1,59 @@
+# ============================================================
+# 04-ejecucion-y-pruebas.txt
+# Ejecución del script de hardening y pruebas de las reglas CIS.
+# Cada bloque indica en qué máquina o consola se ejecuta.
+# ============================================================
+
+# ------------------------------------------------------------
+# A. En el Ubuntu auditor (zabbix-2241), desde la raíz del proyecto
+# ------------------------------------------------------------
+cd ~/hardening-cis-2241
+source venv/bin/activate
+
+# Auditoría: genera informe SIN aplicar ninguna regla
+python scripts/hardening.py --audit
+
+# Pruebas ANTES de aplicar (puertos abiertos: Telnet en R1 y SW1, HTTP en SW1)
+nc -zv -w 3 10.22.41.1 23
+nc -zv -w 3 10.22.41.2 23
+nc -zv -w 3 10.22.41.2 80
+
+# Aplicar las reglas y generar informe póstumo
+python scripts/hardening.py --apply
+
+# Pruebas DESPUÉS de aplicar (deben dar Connection refused)
+date
+nc -zv -w 3 10.22.41.1 23
+nc -zv -w 3 10.22.41.2 23
+nc -zv -w 3 10.22.41.2 80
+
+# Auditoría final: debe dar 100% en ambos equipos
+python scripts/hardening.py --audit
+
+# Diferencias entre la configuración de antes y la de después
+diff running-configs/R1-2241_antes.cfg running-configs/R1-2241_despues.cfg
+diff running-configs/SW1-2241_antes.cfg running-configs/SW1-2241_despues.cfg
+
+# ------------------------------------------------------------
+# B. En el Ubuntu auditor: entrar a R1-2241 por SSH
+#    (las opciones -o son necesarias por los algoritmos antiguos del IOS)
+# ------------------------------------------------------------
+ssh -o KexAlgorithms=+diffie-hellman-group14-sha1 -o HostKeyAlgorithms=+ssh-rsa -o Ciphers=+aes128-cbc,aes256-cbc admin-local@10.22.41.1
+
+# En la sesión SSH de R1-2241 (prompt R1-2241#):
+show running-config | include enable secret|service password-encryption|no service pad|no ip source-route|service timestamps|no ip http
+show running-config | section banner
+show running-config | section line
+show running-config interface FastEthernet0/0
+exit
+
+# ------------------------------------------------------------
+# C. En el Ubuntu auditor: entrar a SW1-2241 por SSH
+# ------------------------------------------------------------
+ssh -o KexAlgorithms=+diffie-hellman-group14-sha1 -o HostKeyAlgorithms=+ssh-rsa -o Ciphers=+aes128-cbc,aes256-cbc admin-local@10.22.41.2
+
+# En la sesión SSH de SW1-2241 (prompt SW1-2241#):
+show running-config | include enable secret|service password-encryption|no service pad|service timestamps|no ip http
+show running-config | section banner
+show running-config | section line
+exit

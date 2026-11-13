@@ -1,0 +1,20 @@
+! ============================================================
+! 02-SW1-2241-ssh-base.txt
+! Dónde se ejecuta: consola de SW1-2241 (GNS3)
+! Qué hace: usuario local y SSH versión 2, lo mínimo para que el
+!           script de hardening pueda conectarse por SSH.
+! Las reglas CIS NO se aplican aquí: las aplica hardening.py --apply.
+! Reemplazar <contraseña-del-laboratorio> por la contraseña real.
+! ============================================================
+
+enable
+configure terminal
+ip domain-name hardening2241.local
+username admin-local privilege 15 secret <contraseña-del-laboratorio>
+crypto key generate rsa modulus 2048
+ip ssh version 2
+line vty 0 15
+ login local
+exit
+end
+write memory
